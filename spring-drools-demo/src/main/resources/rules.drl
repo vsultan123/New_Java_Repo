@@ -1,0 +1,27 @@
+import com.techiebeans.springdrools.model.RulesData;
+
+dialect "mvel"
+
+rule "ABC_Bank"
+
+when
+ruleObject : RulesData(cardType=="ABC_Bank" && price>10000);
+then
+ruleObject.setDiscount(10);
+end;
+
+rule "DEF_Bank"
+
+when
+ruleObject : RulesData(cardType=="DEF_Bank" && price>15000);
+then
+ruleObject.setDiscount(8);
+end;
+
+rule "XYZ_Bank"
+
+when
+ruleObject : RulesData(cardType=="XYZ_Bank" && price>15000);
+then
+ruleObject.setDiscount(15);
+end;
